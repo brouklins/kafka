@@ -1,4 +1,5 @@
-Instalar o kafka local
+##Configuração do Kafka
+### Instalar o kafka local sem docker
 https://www.apache.org/dyn/closer.cgi?path=/kafka/3.2.0/kafka_2.13-3.2.0.tgz
 
 Necessário Java8+ instalado
@@ -20,5 +21,17 @@ Criando um tópico consumer (leitor de eventos), lembrando que o nome do tópico
 bin/kafka-console-consumer.sh --topic prevTopic --from-beginning --bootstrap-server localhost:9092
 
 No windows: .\bin\windows\kafka-console-consumer.bat --topic prevTopic --from-beginning --bootstrap-server localhost:9092
+
+### Setup kafka com docker
+Na pasta root, com o docker local configurado e instalado, abra o terminal e digite: <br>
+`docker-compose up -d` <br>
+- Criar um topico: <br>
+```docker exec broker kafka-topics --bootstrap-server broker:9092 --create --topic <nome-do-topico>``` <br> <br>
+- Produzir mensagens no console: <br>
+```docker exec --interactive broker kafka-console-producer --bootstrap-server broker:9092 --topic <nome-do-topico>``` <br> <br>
+- Consumir mensagens no console: <br>
+  ```docker exec --interactive broker kafka-console-consumer --bootstrap-server broker:9092 --topic <nome-do-topico>``` <br> <br>
+
+
 
 
