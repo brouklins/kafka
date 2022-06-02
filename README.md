@@ -9,13 +9,13 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 
 No windows: .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
 
-Criando um Kafka broker
+Criando um Kafka broker (producer)
 
 bin/kafka-server-start.sh config/server.properties
 
 No windows: .\bin\windows\kafka-server-start.bat .\config\server.properties
 
-Criando um tópico consumer (leitor de eventos), lembrando que o nome do tópico no comando deve ser do tópico que queremos consumir a mensagem
+Criando um tópico consumer (leitor de eventos), lembrando que o nome do tópico no comando deve ser do tópico que queremos consumir a mensagem (producer)
 
 bin/kafka-console-consumer.sh --topic prevTopic --from-beginning --bootstrap-server localhost:9092
 
