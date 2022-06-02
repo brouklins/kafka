@@ -29,14 +29,14 @@ public class KafkaProducerConfig {
     }
     //Criar instância de producers
     @Bean
-    public ProducerFactory<String, Object> producerFactory(){
+    public ProducerFactory<String, String> producerFactory(){
         return new DefaultKafkaProducerFactory<>(producerConfig());
     }
 
     //Mandar mensagens com kafka Template
     @Bean
-    public KafkaTemplate<String, Object> kafkaTemplate(
-            ProducerFactory<String, Object> producerFactory
+    public KafkaTemplate<String, String> kafkaTemplate(
+            ProducerFactory<String, String> producerFactory
     ){
         //Passando utilizando injeção de dependência
         return new KafkaTemplate<>(producerFactory);
