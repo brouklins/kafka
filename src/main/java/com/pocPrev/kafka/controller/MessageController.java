@@ -1,4 +1,4 @@
-package controller;
+package com.pocPrev.kafka.controller;
 
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;

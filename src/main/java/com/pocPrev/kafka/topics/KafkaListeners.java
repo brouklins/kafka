@@ -1,4 +1,4 @@
-package topics;
+package com.pocPrev.kafka.topics;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
