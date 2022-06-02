@@ -19,4 +19,6 @@ Criando um tópico consumer (leitor de eventos), lembrando que o nome do tópico
 
 bin/kafka-console-consumer.sh --topic prevTopic --from-beginning --bootstrap-server localhost:9092
 
+No windows: .\bin\windows\kafka-console-consumer.bat --topic prevTopic --from-beginning --bootstrap-server localhost:9092
+
 
