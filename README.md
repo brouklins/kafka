@@ -1,4 +1,4 @@
-##Configuração do Kafka
+## Configuração do Kafka
 ### Instalar o kafka local sem docker
 https://www.apache.org/dyn/closer.cgi?path=/kafka/3.2.0/kafka_2.13-3.2.0.tgz
 
@@ -31,6 +31,8 @@ Na pasta root, com o docker local configurado e instalado, abra o terminal e dig
 ```docker exec --interactive broker kafka-console-producer --bootstrap-server broker:9092 --topic <nome-do-topico>``` <br> <br>
 - Consumir mensagens no console: <br>
   ```docker exec --interactive broker kafka-console-consumer --bootstrap-server broker:9092 --topic <nome-do-topico>``` <br> <br>
+- Derrubar o container: <br>
+  ```docker-compose down``` <br> <br>
 
 
 

@@ -1,6 +1,9 @@
 package com.pocPrev.kafka.topics;
 
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.support.KafkaHeaders;
+import org.springframework.messaging.handler.annotation.Header;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,9 +14,12 @@ public class KafkaListeners {
             topics = "prevTopic",
             groupId = "groupId"
     )
-    void listener(String data){
-        // print para ver se está recebendo a mensagem
-        System.out.println("Listener recebido: " + data);
-
+    void listener(
+            @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String key,
+            @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long ts,
+            @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
+            @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
+            @Payload String data) {
+        System.out.println("KEY: " + key + " || payload: " + data + " || timestamp: " + ts + " || topic: " + topic + " || partition: " + partition);
     }
 }

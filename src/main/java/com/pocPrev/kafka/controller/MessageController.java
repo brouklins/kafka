@@ -1,6 +1,6 @@
 package com.pocPrev.kafka.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.pocPrev.kafka.controller.request.MessageRequest;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +19,7 @@ public class MessageController {
     }
 
     @PostMapping
-    public void publish(@RequestBody MessageRequest request){
+    public void publish(@RequestBody MessageRequest request) {
         kafkaTemplate.send("prevTopic", request.getMessage());
-
     }
 }

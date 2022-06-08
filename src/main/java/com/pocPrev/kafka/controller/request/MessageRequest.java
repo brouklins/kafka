@@ -1,14 +1,9 @@
-package com.pocPrev.kafka.controller;
+package com.pocPrev.kafka.controller.request;
 
 public class MessageRequest {
-
     private String message;
 
     public MessageRequest() {
-    }
-
-    public MessageRequest(String message) {
-        this.message = message;
     }
 
     public String getMessage() {
