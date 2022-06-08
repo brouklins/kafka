@@ -1,7 +1,7 @@
 package com.pocPrev.kafka.application.model;
 
-import com.pocPrev.kafka.controller.request.AgreementRequest;
 import com.pocPrev.kafka.application.util.JsonMapper;
+import com.pocPrev.kafka.controller.request.AgreementRequest;
 
 import java.io.Serializable;
 
@@ -19,13 +19,13 @@ public class Agreement implements Serializable {
 
     private void setKey(AgreementRequest agreementRequest) {
         String toJson = new JsonMapper<>()
-                .objectToJson(new AgreementKey(agreementRequest.getZclients()));
+                .objectToJsonWithNoBreakLines(new AgreementKey(agreementRequest.getZclients()));
         this.key = toJson;
     }
 
     private void setValue(AgreementRequest agreementRequest) {
         String toJson = new JsonMapper<>()
-                .objectToJson(agreementRequest);
+                .objectToJsonWithNoBreakLines(agreementRequest);
         this.value = toJson;
     }
 

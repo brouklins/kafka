@@ -14,4 +14,9 @@ public class JsonMapper<T> {
             throw new MapperException(e.getMessage());
         }
     }
+
+    public String objectToJsonWithNoBreakLines(T object) {
+        return this.objectToJson(object)
+                .replaceAll("\\r|\\n", "");
+    }
 }
