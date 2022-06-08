@@ -15,11 +15,11 @@ public class KafkaListeners {
             groupId = "groupId"
     )
     void listener(
-            @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) String key,
+            @Header(name = KafkaHeaders.RECEIVED_MESSAGE_KEY, required = false) String key,
             @Header(KafkaHeaders.RECEIVED_TIMESTAMP) long ts,
             @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
             @Header(KafkaHeaders.RECEIVED_PARTITION_ID) int partition,
-            @Payload String data) {
+            @Payload(required = false) String data) {
         System.out.println("KEY: " + key + " || payload: " + data + " || timestamp: " + ts + " || topic: " + topic + " || partition: " + partition);
     }
 }
