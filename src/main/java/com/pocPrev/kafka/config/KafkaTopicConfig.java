@@ -9,10 +9,15 @@ import org.springframework.kafka.config.TopicBuilder;
 public class KafkaTopicConfig {
 
     //configuração do topico
+    @Bean
+    public NewTopic prevTopic() {
+        return TopicBuilder.name("prevTopic")
+                .build();
+    }
 
     @Bean
-    public NewTopic prevTopic(){
-        return TopicBuilder.name("prevTopic")
-        .build();
+    public NewTopic prevTopic2() {
+        return TopicBuilder.name("prevTopic2")
+                .build();
     }
 }
