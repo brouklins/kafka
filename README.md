@@ -32,7 +32,16 @@ Na pasta root, com o docker local configurado e instalado, abra o terminal e dig
 - Consumir mensagens no console: <br>
   ```docker exec --interactive broker kafka-console-consumer --bootstrap-server broker:9092 --topic <nome-do-topico>``` <br> <br>
 - Derrubar o container: <br>
-  ```docker-compose down``` <br> <br>
+  ```docker-compose down``` <br>
+
+# Rodar a aplicação
+Com o maven instalado e configurado, rodar os seguintes comandos: <br>
+
+- Instalar as dependências: <br>
+```mvn clean install``` <br><br>
+- Start na aplicação: <br>
+```mvn spring-boot:run``` <br><br>
+
 
 
 
