@@ -18,7 +18,7 @@ public class ServiceToReadAgreementNotification implements UseCaseToReadAgreemen
 
     @Override
     @KafkaListener(
-            topics = "prevTopic2",
+            topics = "${prev.topic2}",
             groupId = "groupId"
     )
     public void processNotification(
